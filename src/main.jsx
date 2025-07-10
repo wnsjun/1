@@ -1,12 +1,13 @@
 import { StrictMode } from 'react';
-import { createRoot,QueryClientProvider } from '@tanstack/react-query';
+import { createRoot } from 'react-dom/client';
+import {QueryClient,QueryClientProvider } from '@tanstack/react-query';
 import {ReactQueryDevtools} from '@tanstack/react-query-devtools';
 import './index.css';
 import App from './App.jsx';
-import {SpeedInsights} from '@vercel/speed-insights';
-import {Analytics} from '@vercel/analytics';
+import {SpeedInsights} from '@vercel/speed-insights/react';
+import {Analytics} from '@vercel/analytics/react';
 
-const queryClient = new queryClient();
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
